@@ -11,14 +11,14 @@
         <h4 class="text-center mb-3">Login Surveillant</h4>
         <form method="POST" action="actionLogin.php">
             <div class="mb-3">
-                <label for="matricule" class="form-label">Matricule</label>
-                <input type="text" class="form-control" id="matricule" name="matricule" required>
+                <label for="matricule" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="matricule" name="Nom" required>
             </div>
             <div class="mb-3">
                 <label for="psw" class="form-label">Password</label>
-                <input type="password" class="form-control" id="psw" name="psw" required>
+                <input type="password" class="form-control" id="psw" name="pwd" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <button type="submit" name="send" class="btn btn-primary w-100">Login</button>
         </form>
     </div>
 
