@@ -9,7 +9,7 @@
 
     <div class="card p-4 shadow rounded" style="width: 22rem;">
         <h4 class="text-center mb-3">Login Surveillant</h4>
-        <form method="POST" action="/login">
+        <form method="POST" action="actionLogin.php">
             <div class="mb-3">
                 <label for="matricule" class="form-label">Matricule</label>
                 <input type="text" class="form-control" id="matricule" name="matricule" required>
