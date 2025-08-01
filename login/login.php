@@ -12,7 +12,7 @@
         <form method="POST" action="actionLogin.php">
             <div class="mb-3">
                 <label for="matricule" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="matricule" name="Nom" required>
+                <input type="text" class="form-control" id="matricule" name="nom" required>
             </div>
             <div class="mb-3">
                 <label for="psw" class="form-label">Password</label>
