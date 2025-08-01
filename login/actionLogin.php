@@ -23,20 +23,20 @@
                     header('location:accu.php');
                 }else{
                     // nom or password was incorrect bro !
-                    header('location:login.php');
+                    header('location:login.php?p=4');
                 }
             }else{
                 // pr d'exucution : 
-                header('locatiom:login.php');
+                header('locatiom:login.php?p=3');
             }
         }else{
             // you live an enmty form !
-            header('location:login.php');
+            header('location:login.php?p=2');
 
         }
     }else{
         // plz logged !
-        header('location:login.php');
+        header('location:login.php?p=1');
 
     }
 ?>
