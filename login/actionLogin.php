@@ -6,37 +6,29 @@
             $data = stripslashes($data); 
             return $data ; 
         }
-        // getting the data from user ! 
         $nom = test_input($_POST['nom']); 
         $pwd = $_POST['pwd'];
-        // lets check if this is empty bro !
+
         if(!empty($nom) && !empty($pwd)){
-            // we will inculde cnx file here !
             include('../conx.php'); 
-            $req = 'select * from Surveillant where nom = ? and psw =?'; 
-            $stmt = $conn->prepare($req); 
-            $inserion = $stmt->execute([$nom, md5($pwd)]); 
-            if($inserion){
-                if($stmt->rowCount() == 1 ){
-                    session_start(); 
-                    $_SESSION['nom'] = $nom;
-                    header('location:accu.php');
+            $req = 'SELECT * FROM Surveillant WHERE nom=? AND psw=?'; 
+            $stmt = $conn->prepare($req);
+            $insertion = $stmt->execute([$nom,md5($pwd)]); 
+            if($insertion){
+                if($stmt->rowCount() == 1){
+                    session_start();
+                    $_SESSION['nom']=$name; 
+                    header('location:accu.php?'); 
                 }else{
-                    // nom or password was incorrect bro !
-                    header('location:login.php?p=4');
+                    header('location:login.php?p=4'); 
                 }
             }else{
-                // pr d'exucution : 
-                header('locatiom:login.php?p=3');
+                header('location:login.php?p=3'); 
             }
         }else{
-            // you live an enmty form !
-            header('location:login.php?p=2');
-
+            header('location:login.php?p=2'); 
         }
     }else{
-        // plz logged !
-        header('location:login.php?p=1');
-
+        header('location:login.php?p=1'); 
     }
 ?>
