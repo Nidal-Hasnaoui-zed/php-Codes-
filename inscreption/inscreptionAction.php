@@ -13,7 +13,7 @@
         $phone = test_input($_POST['phone']);
         $fill = $_POST['fil']; 
         if(!empty($email) && !empty($nom) && !empty($prenom) && !empty($phone) && !empty($fill)){
-            if($fil != '0'){
+            if($fill != '0'){
             if(isset($_FILES['pic']['tmp_name'])){
                 $pic_name = $_FILES['pic']['name']; 
                 $pic_tmp = $_FILES['pic']['tmp_name']; 
