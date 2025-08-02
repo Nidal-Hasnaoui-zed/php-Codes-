@@ -11,6 +11,30 @@
         $nom = test_input($_POST['nom']);
         $prenom= test_input($_POST['prenom']);
         $phone = test_input($_POST['phone']);
+        $fill = $_POST['fil']; 
+        if(!empty($email) && !empty($nom) && !empty($prenom) && !empty($phone) && !empty($fill)){
+            if($fil != '0'){
+            if(isset($_FILES['pic']['tmp_name'])){
+                $pic_name = $_FILES['pic']['name']; 
+                $pic_tmp = $_FILES['pic']['tmp_name']; 
+                $extention = pathinfo($pic_name, PATHINFO_EXTENSION); 
+                if($extention == 'png' || $extention == 'jpg' || $extention == 'jpeg'){
+                    
+                }else{
+                    // plz gives us a pic !
+                    header('location:inscreption.php?p=4');
+                }
+            }else{
+                // plz chose a pic : 
+                header('location:inscreption.php?p=3');
+            }
+        }else{
+            // chose a fill !
+            header('location:inscreption.php?p=2');
+        }
+        }else{
+            // you leave empty filed !
+        }
 
     }else{
         // cree un compte !
