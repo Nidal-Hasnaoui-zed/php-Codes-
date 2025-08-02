@@ -10,18 +10,18 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <h2 class="text-center mb-4">Nouvel Etudiant</h2>
-        <form>
+        <form action="inscreptionAction.php" method="post">
           <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Adresse mail" required>
+            <input type="email" class="form-control" name="email" placeholder="Adresse mail" required>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Nom" required>
+            <input type="text" class="form-control" name="nom" placeholder="Nom" required>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Prénom" required>
+            <input type="text" class="form-control" name="prenom" placeholder="Prénom" required>
           </div>
           <div class="mb-3">
-            <input type="tel" class="form-control" placeholder="Numéro tel" required>
+            <input type="tel" class="form-control" name="phone" placeholder="Numéro tel" required>
           </div>
           <div class="mb-3">
             <select class="form-select" required>
@@ -33,9 +33,9 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Photo</label>
-            <input type="file" class="form-control">
+            <input type="file" class="form-control" name="pic">
           </div>
-          <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+          <button type="submit" name="send" class="btn btn-primary w-100">S'inscrire</button>
         </form>
       </div>
     </div>
