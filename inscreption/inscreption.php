@@ -25,10 +25,21 @@
           </div>
           <div class="mb-3">
             <select class="form-select" required>
-              <option selected disabled>Filière</option>
-              <option value="info">Informatique</option>
-              <option value="eco">Économie</option>
-              <option value="gestion">Gestion</option>
+              <option value="0" selected disabled>Filière</option>
+              <?php 
+                    include('../conx.php'); 
+                    $req = 'SELECT * FROM Filiere'; 
+                    $stmt = $conn->query($req); 
+                    $fils = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+                    foreach($fils as $f){
+                        $option = '<option value=">'; 
+                        $option .= $f['idFiliere']; 
+                        $option .= '">'; 
+                        $option .= $f['nomFiliere']; 
+                        $option .= "</option>"; 
+                        echo $option;
+                    }
+              ?>
             </select>
           </div>
           <div class="mb-3">
