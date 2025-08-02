@@ -19,7 +19,11 @@
                 $pic_tmp = $_FILES['pic']['tmp_name']; 
                 $extention = pathinfo($pic_name, PATHINFO_EXTENSION); 
                 if($extention == 'png' || $extention == 'jpg' || $extention == 'jpeg'){
-                    
+                    include('../conx.php');
+                    $req = 'INSERT INTO Etudiant(mail,nom,prenom,tel,photo) VALUES(?,?,?,?,?)'; 
+                    $stmt = $conn->prepare($req); 
+                    $stmt->execute([$email,$nom,$prenom,$phone,$pic_name]); 
+                    move_uploaded_file($pic_name,'images/'.$pic_name);
                 }else{
                     // plz gives us a pic !
                     header('location:inscreption.php?p=4');
