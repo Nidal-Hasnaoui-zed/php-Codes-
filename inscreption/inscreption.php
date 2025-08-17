@@ -17,32 +17,38 @@
                         <h4>Login</h4>
                     </div>
                     <div class="card-body">
-                        <form action="actionlogin.php" method="POST">
+                        <form action="action.php" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="your name" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="name" class="form-label">Last Name</label>
-                                <input type="text" name="lname" id="lname" class="form-control" required>
+                                <input type="text" name="lname" id="lname" class="form-control" placeholder="your last name" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="name" class="form-label">Email</label>
-                                <input type="text" name="email" id="email" class="form-control" required>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="your email" required>
                             </div>
 
 
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" name="pwd" id="password" class="form-control" required>
+                                <input type="password" name="pwd" id="password" class="form-control" placeholder="your password" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="password" class="form-label">Confirm Password</label>
-                                <input type="password" name="cpwd" id="password" class="form-control" required>
+                                <input type="password" name="cpwd" id="password" class="form-control" placeholder="confirm your password" required>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Your Picture</label>
+                                <input type="file" name="pic" id="password" class="form-control"  required>
+                            </div>
+
 
                             <button type="submit" name="send" class="btn btn-primary w-100">Login</button>
                         </form>
