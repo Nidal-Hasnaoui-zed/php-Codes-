@@ -48,6 +48,27 @@
                                 <input type="password" name="pwd" id="password" class="form-control" placeholder="your password" required>
                             </div>
 
+                            <div class="mb-3">            
+                                <select class="form-select" name="filiere" id="filiere" >
+                                    <option value="0">Choisissez une filière</option>
+                                    <?php 
+                                        include('../cnx.php');
+                                        $req = 'select * from Filiere';
+                                        $stmt = $conn->query($req); 
+                                        $students = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+                                        foreach($students as $s){
+                                            $option = '<option value="'; 
+                                            $option .= $s['idFiliere']; 
+                                            $option .= '">'; 
+                                            $option .= $s['nomFiliere'];
+                                            $option .= '</option>'; 
+                                            echo $option;
+                                        } 
+                                    ?>
+                                </select>
+                            </div>
+
+
                             <div class="mb-3">
                                 <label for="password" class="form-label">Confirm Password</label>
                                 <input type="password" name="cpwd" id="password" class="form-control" placeholder="confirm your password" required>
