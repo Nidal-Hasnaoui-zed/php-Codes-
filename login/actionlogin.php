@@ -21,7 +21,8 @@
             if($excute){
                 if($stmt->rowCount() == 1){
                     session_start(); 
-                    $_SESSION['user_email'] = $email; 
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC); 
+                    $_SESSION['user_id'] = $user['id']; 
                     header('location:accu.php'); 
                     exit(); 
                 }else{
