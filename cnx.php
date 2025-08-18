@@ -1,7 +1,7 @@
 <?php 
 
     $servername = 'localhost'; 
-    $dbname = 'preparation'; 
+    $dbname = 'db_stagiaire'; 
     $username = 'root'; 
     $password = ''; 
 

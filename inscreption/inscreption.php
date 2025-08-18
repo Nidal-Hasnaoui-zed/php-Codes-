@@ -33,6 +33,15 @@
                                 <input type="text" name="email" id="email" class="form-control" placeholder="your email" required>
                             </div>
 
+                             <div class="mb-3">
+                                <label for="name" class="form-label">phone number</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="your email" required>
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="password" class="form-label">Your Picture</label>
+                                <input type="file" name="pic" id="password" class="form-control"  required>
+                            </div>
 
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
@@ -42,11 +51,6 @@
                             <div class="mb-3">
                                 <label for="password" class="form-label">Confirm Password</label>
                                 <input type="password" name="cpwd" id="password" class="form-control" placeholder="confirm your password" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Your Picture</label>
-                                <input type="file" name="pic" id="password" class="form-control"  required>
                             </div>
 
 
