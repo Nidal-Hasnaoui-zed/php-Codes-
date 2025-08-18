@@ -35,7 +35,7 @@
 
                              <div class="mb-3">
                                 <label for="name" class="form-label">phone number</label>
-                                <input type="text" name="email" id="email" class="form-control" placeholder="your email" required>
+                                <input type="text" name="phone" id="email" class="form-control" placeholder="your email" required>
                             </div>
 
                              <div class="mb-3">
