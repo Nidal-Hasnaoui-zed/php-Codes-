@@ -5,7 +5,7 @@
         $id = $_GET['idEtudiant']; 
         include('../cnx.php'); 
         $req = 'DELETE FROM Etudiant
-            WHERE id = 1;';
+            WHERE id = ?;';
         $stmt = $conn->prepare($req); 
         $exuction = $stmt->execute([$id]); 
 
