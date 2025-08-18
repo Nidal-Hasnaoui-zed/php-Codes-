@@ -41,7 +41,7 @@
         echo '<td>' . htmlspecialchars($s['tel']) . '</td>';
         echo '<td><img src="' . htmlspecialchars($imgPath) . '" alt="" width="60" height="60" style="object-fit:cover;"></td>';
         echo '<td>' . htmlspecialchars($s['nomFiliere']) . '</td>';
-        echo '<td><a class="btn btn-danger" href="delet.php?idEtudiant='.htmlspecialchars($s['idEtudiant']).'">Delete</a>';
+        echo '<td><a class="btn btn-danger" href="delet.php?idEtudiant='.htmlspecialchars($s['idEtudiant']).'">Delete</a></td>';
         echo '<td><a class="btn btn-info" href="#">Update</a>';
         echo '</tr>';
       }

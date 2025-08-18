@@ -1,11 +1,11 @@
 <?php 
-
+    session_start();
     if(isset($_SESSION['matricule']) && isset($_GET['idEtudiant'])){
 
         $id = $_GET['idEtudiant']; 
         include('../cnx.php'); 
         $req = 'DELETE FROM Etudiant
-            WHERE id = ?;';
+            WHERE idEtudiant= ?;';
         $stmt = $conn->prepare($req); 
         $exuction = $stmt->execute([$id]); 
 
