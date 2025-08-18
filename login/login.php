@@ -19,8 +19,8 @@
                     <div class="card-body">
                         <form action="actionlogin.php" method="POST">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
+                                <label for="name" class="form-label">Email</label>
+                                <input type="text" name="email" id="name" class="form-control" required>
                             </div>
 
                             <div class="mb-3">

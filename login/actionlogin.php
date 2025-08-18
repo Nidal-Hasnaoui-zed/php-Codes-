@@ -1,57 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Form</title>
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+<?php 
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send'])){
 
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h4>Login</h4>
-                    </div>
-                    <div class="card-body">
-                        <form action="actionlogin.php" method="POST">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
-                            </div>
+        function test_input($data){
+            $data = htmlentities($data); 
+            $data = trim($data); 
+            $data = stripslashes($data); 
+            return $data;
+        }
 
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Last Name</label>
-                                <input type="text" name="lname" id="lname" class="form-control" required>
-                            </div>
+        $email = test_input($_POST['email']);
+        $pwd= test_input($_POST['pwd']);
 
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Email</label>
-                                <input type="text" name="email" id="email" class="form-control" required>
-                            </div>
+        if(!empty($email) && !empty($pwd)){
+            
+            include('../cnx.php'); 
+            $req = 'select * from users where email=? and password=?'; 
+            $stmt = $conn->prepare($req); 
+            $excute = $stmt->execute([$email, md5($pwd)]); 
+            if($excute){
+                if($stmt->rowCount() == 1){
+                    session_start(); 
+                    $_SESSION['user_email'] = $email; 
+                    header('location:accu.php'); 
+                    exit(); 
+                }else{
+                    header('location:login.php?p=1'); 
+                    exit(); 
+                }
+            }else{
+                header('location:login.php?p=1'); 
+                exit(); 
+            }
+        }else{
+            header('location:login.php?p=1'); 
+            exit(); 
+        }
 
+    }else{
+        header('location:login.php?p=1'); 
+        exit(); 
+    }
 
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="pwd" id="password" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Confirm Password</label>
-                                <input type="password" name="cpwd" id="password" class="form-control" required>
-                            </div>
-
-                            <button type="submit" name="send" class="btn btn-primary w-100">Login</button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+?>
