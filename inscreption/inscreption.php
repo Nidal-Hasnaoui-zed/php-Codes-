@@ -43,11 +43,6 @@
                                 <input type="file" name="pic" id="password" class="form-control"  required>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="pwd" id="password" class="form-control" placeholder="your password" required>
-                            </div>
-
                             <div class="mb-3">            
                                 <select class="form-select" name="filiere" id="filiere" >
                                     <option value="0">Choisissez une filière</option>
@@ -67,13 +62,6 @@
                                     ?>
                                 </select>
                             </div>
-
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Confirm Password</label>
-                                <input type="password" name="cpwd" id="password" class="form-control" placeholder="confirm your password" required>
-                            </div>
-
 
                             <button type="submit" name="send" class="btn btn-primary w-100">Login</button>
                         </form>

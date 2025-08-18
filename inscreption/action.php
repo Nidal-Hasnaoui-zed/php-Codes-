@@ -49,7 +49,7 @@
 
                             move_uploaded_file($pic_tmp_name, "images/".$pic_name); 
                             
-                            header('location:inscreption.php?p=6'); 
+                            header('location:inscreption.php?p=100'); 
                             exit(); 
 
                         }else{
