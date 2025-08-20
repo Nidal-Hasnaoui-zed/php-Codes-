@@ -26,9 +26,37 @@
         if(isset($_SESSION['matricule'])){
 
             include('../connextion.php'); 
-            $req = 'select * from Etudiant'; 
+            $req = 'SELECT e.*, f.nomFiliere 
+                    FROM Etudiant e
+                    INNER JOIN Filiere f ON f.idFiliere = e.idFiliere;'; 
             $stmt = $conn->query($req); 
-            
+
+            $students = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            foreach($students as $s){
+                $tr = '<tr><td>'; 
+                $tr .= $s['nom'] ; 
+                $tr .= '</td><td>'; 
+                $tr .= $s['prenom']; 
+                $tr .= '</td><td>'; 
+                $tr .= $s['mail']; 
+                $tr .= '</td><td>';
+                $tr .= $s['tel'];
+                $tr .= '</td><td><img style="width=40px;height:40px;" src="../inscreption/images/';
+                $tr .= $s['photo'];
+                $tr .= '"></td><td>';
+                $tr .= $s['nomFiliere']; 
+                $tr .= '</td><td>';
+                $tr .= '<a class="btn btn-danger" href="delete.php?ids=>';
+                $tr .= $s['idEtudiant']; 
+                $tr .= '">DELET</a>';
+                $tr .= '</td><td>';
+                $tr .= '<a class="btn btn-info" href="update.php?ids=>';
+                $tr .= $s['idEtudiant'];
+                $tr .= '">UPADATE</a>';
+                $tr .= '</td></tr>'; 
+                echo $tr;
+
+            }
 
         }else{
             // please login first !
