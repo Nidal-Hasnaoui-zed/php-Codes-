@@ -26,4 +26,12 @@
             return $this->job; 
         }
     }
+
+    // lets create an instence from this class !
+    $p1 = new Person(); 
+    // put values : 
+    $p1->name = 'nidal'; 
+    $p1->age = 19 ; 
+    $p1->job = 'ALGO-Treader !'; 
+    echo "hey my name is $p1->name , and i have $p1->age years old and my job is $p1->job";
 ?>
