@@ -33,5 +33,14 @@
     $p1->name = 'nidal'; 
     $p1->age = 19 ; 
     $p1->job = 'ALGO-Treader !'; 
-    echo "hey my name is $p1->name , and i have $p1->age years old and my job is $p1->job";
+    echo "hey my name is $p1->name , and i have $p1->age years old and my job is <h4 style='display:inline;'>$p1->job</h4>";
+
+    echo '<br><br>'; // break line !
+
+    $p2 = new Person(); 
+    // put values : 
+    $p1->name = 'hamza'; 
+    $p1->age = 22 ; 
+    $p1->job = 'Full-Stack'; 
+    echo "hey my name is $p1->name , and i have $p1->age years old and my job is <h4 style='display:inline;'>$p1->job</h4>";
 ?>
