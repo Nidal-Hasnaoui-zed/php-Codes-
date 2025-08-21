@@ -1,6 +1,6 @@
 <?php 
     // creatign a class Persone and put 3 properties name , age and job and 3 metheod's (getters and setters !)
-    class Person{
+    class Persone{
         public $name; 
         public $age ; 
         public $job ; 
@@ -28,7 +28,7 @@
     }
 
     // lets create an instence from this class !
-    $p1 = new Person(); 
+    $p1 = new Persone(); 
     // put values : 
     $p1->name = 'nidal'; 
     $p1->age = 19 ; 
@@ -37,7 +37,7 @@
 
     echo '<br><br>'; // break line !
 
-    $p2 = new Person(); 
+    $p2 = new Persone(); 
     // put values : 
     $p1->name = 'hamza'; 
     $p1->age = 22 ; 
