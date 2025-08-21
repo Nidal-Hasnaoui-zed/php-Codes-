@@ -18,7 +18,7 @@
         public function getInfo(){
             return "$this->brand $this->model ($this->year)"; 
         }
-        // i don
+        // i don't understand this !
         public function getWeight($inKG = false) {
         if($inKG){
             $weight_in_kg = $this->weight / 1000;
