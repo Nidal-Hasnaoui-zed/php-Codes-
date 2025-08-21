@@ -46,11 +46,11 @@
                 $tr .= '"></td><td>';
                 $tr .= $s['nomFiliere']; 
                 $tr .= '</td><td>';
-                $tr .= '<a class="btn btn-danger" href="delete.php?ids=>';
+                $tr .= '<a class="btn btn-danger" href="delete.php?ids=';
                 $tr .= $s['idEtudiant']; 
                 $tr .= '">DELET</a>';
                 $tr .= '</td><td>';
-                $tr .= '<a class="btn btn-info" href="update.php?ids=>';
+                $tr .= '<a class="btn btn-info" href="update2.php?ids=';
                 $tr .= $s['idEtudiant'];
                 $tr .= '">UPADATE</a>';
                 $tr .= '</td></tr>'; 
